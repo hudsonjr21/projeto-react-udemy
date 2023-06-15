@@ -2,80 +2,79 @@ import React from "react";
 import { useEffect, useState } from "react";
 import Home from "../components/Home";
 import '../style.css';
+import Imagem from '../image/filmes.jpg'
 //https://sujeitoprogramador.com/rn-api/?api=posts (api fora do ar)
 
 const posts = [
   {
-    "id": "1",
-    "titulo": "Os Vingadores",
-    "capa": "https://exemplo.com/vingadores.jpg",
-    "subtitulo": "A Era de Ultron",
-    "categoria": "Ação"
+    id: '1',
+    titulo: 'Os Vingadores',
+    capa: Imagem,
+    subtitulo: 'A Era de Ultron',
+    categoria: 'Ação'
   },
   {
-    "id": "2",
-    "titulo": "Interestelar",
-    "capa": "https://exemplo.com/interestelar.jpg",
-    "subtitulo": "Aventura no Espaço",
-    "categoria": "Ficção Científica"
+    id: '2',
+    titulo: 'Interestelar',
+    capa: Imagem,
+    subtitulo: 'Aventura no Espaço',
+    categoria: 'Ficção Científica'
   },
   {
-    "id": "3",
-    "titulo": "O Poderoso Chefão",
-    "capa": "https://exemplo.com/poderoso_chefao.jpg",
-    "subtitulo": "A Ascensão de um Império",
-    "categoria": "Crime"
+    id: '3',
+    titulo: 'O Poderoso Chefão',
+    capa: Imagem,
+    subtitulo: 'A Ascensão de um Império',
+    categoria: 'Crime'
   },
   {
-    "id": "4",
-    "titulo": "Forrest Gump",
-    "capa": "https://exemplo.com/forrest_gump.jpg",
-    "subtitulo": "O Contador de Histórias",
-    "categoria": "Drama"
+    id: '4',
+    titulo: 'Forrest Gump',
+    capa: Imagem,
+    subtitulo: 'O Contador de Histórias',
+    categoria: 'Drama'
   },
   {
-    "id": "5",
-    "titulo": "O Senhor dos Anéis",
-    "capa": "https://exemplo.com/senhor_dos_aneis.jpg",
-    "subtitulo": "A Sociedade do Anel",
-    "categoria": "Fantasia"
+    id: '5',
+    titulo: 'O Senhor dos Anéis',
+    capa: Imagem,
+    subtitulo: 'A Sociedade do Anel',
+    categoria: 'Fantasia'
   },
   {
-    "id": "6",
-    "titulo": "Pulp Fiction",
-    "capa": "https://exemplo.com/pulp_fiction.jpg",
-    "subtitulo": "Tempo de Violência",
-    "categoria": "Crime"
+    id: '6',
+    titulo: 'Pulp Fiction',
+    capa: Imagem,
+    subtitulo: 'Tempo de Violência',
+    categoria: 'Crime'
   },
   {
-    "id": "7",
-    "titulo": "Jurassic Park",
-    "capa": "https://exemplo.com/jurassic_park.jpg",
-    "subtitulo": "O Parque dos Dinossauros",
-    "categoria": "Ação"
+    id: '7',
+    titulo: 'Jurassic Park',
+    capa: Imagem,
+    subtitulo: 'O Parque dos Dinossauros',
+    categoria: 'Ação'
   }
 ];
-
 
 function Requisicao() {
   const [nutri, setNutri] = useState ([]);
 
   useEffect(() => {
 
-/*    function loadApi(){
-      let url = 'colocar aqui sua api que vai consumir os dados';
+    // function loadApi(){
+    //   let url = 'https://sujeitoprogramador.com/rn-api?api=posts';
 
-      fetch(url)
-      .then((r) => r.json())
-      .then((json) => {
-        setNutri(json);
-      })
+    //   fetch(url)
+    //   .then((r) => r.json())
+    //   .then((json) => {
+    //     setNutri(json);
+    //   })
       
-    }
+    // }
 
-    loadApi();
-*/
-    setNutri(posts);
+    // loadApi();
+      setNutri(posts);
   }, []);
 
   return (
@@ -94,7 +93,8 @@ function Requisicao() {
             <p className="subtitulo">
               {item.subtitulo}
             </p>
-            <a className="botão">Acessar</a>
+            <h1>Categoria: {item.categoria}</h1>
+            <a className="botao">Acessar</a>
           </article>
         )
       })}
